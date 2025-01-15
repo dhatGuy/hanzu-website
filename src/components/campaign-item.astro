@@ -9,8 +9,12 @@ interface Props {
 const { image, title, description } = Astro.props;
 ---
 
-<a href="#" class="relative block rounded-[2.5rem] border border-gray-100">
-  <Image src={image} alt="" class="h-64 w-full rounded-[2.5rem] object-cover" />
+<a href="#" class="relative block rounded-[2.5rem] border border-[#26557d]">
+  <Image
+    src={image}
+    alt={title}
+    class="h-64 w-full rounded-[2.5rem] object-cover border-[#26557d] border"
+  />
 
   <div class="px-4 py-8">
     <strong class="text-xl font-bold uppercase text-white font-euro">
