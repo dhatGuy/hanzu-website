@@ -3,9 +3,9 @@ import { Image } from "astro:assets";
 import influencer from "/src/assets/images/influencer-marketing.png";
 ---
 
-<section class="bg-[#001524] min-h-screen p-8 md:p-16">
+<section class="p-8 md:p-16" id="services">
   <div class="max-w-7xl mx-auto flex flex-col gap-10">
-    <h2 class="text-5xl font-bold">
+    <h2 class="text-3xl font-bold font-euro">
       <span class="text-white">OUR </span>
       <span class="text-[#40E0D0]">SERVICES</span>
     </h2>
@@ -56,6 +56,7 @@ import influencer from "/src/assets/images/influencer-marketing.png";
             src={influencer}
             alt="Influencer Marketing"
             class="w-full h-full"
+            loading="eager"
           />
         </div>
       </div>

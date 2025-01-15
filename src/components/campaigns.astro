@@ -1,0 +1,48 @@
+---
+import dota2 from "../assets/images/dota-2.png";
+import leagueoflegends from "../assets/images/league-of-legends.webp";
+import wow from "../assets/images/wow-legends.jpg";
+import CampaignItem from "./campaign-item.astro";
+
+const items = [
+  {
+    image: wow,
+    title: "Lorem ipsum",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  },
+  {
+    image: dota2,
+    title: "Lorem ipsum",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  },
+  {
+    image: leagueoflegends,
+    title: "Lorem ipsum",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  },
+];
+---
+
+<section class="p-8 md:p-16" id="campaigns">
+  <div class="max-w-7xl mx-auto flex flex-col gap-10">
+    <h2 class="text-5xl font-bold">
+      <span class="text-white">OUR </span>
+      <span class="text-[#2ec4b6]">CAMPAIGNS</span>
+    </h2>
+
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-8">
+      {
+        items.map((item) => (
+          <CampaignItem
+            image={item.image}
+            title={item.title}
+            description={item.description}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

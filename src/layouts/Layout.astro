@@ -1,28 +1,44 @@
 ---
 import "../assets/styles/styles.tailwind.css";
+import "@fontsource/lato";
 import Header from "../components/header.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Hanzu</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Hanzu</title>
+  </head>
+  <body class="bg-[#001524]">
+    <Header />
+    <slot />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <script>
+      const header = document.getElementById("header");
+      const root = document.documentElement;
+
+      function updateHeaderHeight() {
+        if (header) {
+          const headerHeight = header.offsetHeight + 10;
+          root.style.setProperty("--header-height", `${headerHeight}px`);
+        }
+      }
+
+      updateHeaderHeight();
+
+      window.addEventListener("resize", updateHeaderHeight);
+
+      const observer = new ResizeObserver(() => {
+        updateHeaderHeight();
+      });
+
+      if (header) {
+        observer.observe(header);
+      }
+    </script>
+  </body>
+</html>

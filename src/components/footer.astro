@@ -1,0 +1,116 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import logo from "../assets/images/Hanzu-Logo-White.png";
+
+const links = [
+  {
+    title: "Services",
+    href: "#services",
+  },
+  {
+    title: "Campaigns",
+    href: "#campaigns",
+  },
+  {
+    title: "About Us",
+    href: "#about-us",
+  },
+];
+
+const socials = [
+  {
+    name: "youtube",
+    href: "#",
+  },
+  {
+    name: "telegram",
+    href: "#",
+  },
+  {
+    name: "whatsapp",
+    href: "#",
+  },
+  {
+    name: "linkedin",
+    href: "#",
+  },
+  {
+    name: "facebook",
+    href: "#",
+  },
+  {
+    name: "instagram",
+    href: "#",
+  },
+  {
+    name: "twitter",
+    href: "#",
+  },
+];
+---
+
+<footer class="py-10">
+  <hr class="mb-24 bg-[#2ec4b6]" />
+  <div class="p-8 md:p-16">
+    <div class="max-w-7xl mx-auto flex flex-col gap-8">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+        <div class="text-white font-bold uppercase text-3xl space-y-6">
+          <p>Interested? <br /> Let's get in touch.</p>
+          <button
+            type="button"
+            class="inline-block rounded-3xl border uppercase border-[#e71d36] bg-[#e71d36] px-12 py-3 text-sm font-bold text-white hover:bg-transparent hover:text-[#e71d36] focus:outline-none focus:ring active:text-[#e71d36]"
+          >
+            Contact Us
+          </button>
+        </div>
+
+        <div class="">
+          <Image
+            src={logo}
+            alt="Brand"
+            width={200}
+            height={200}
+            loading="eager"
+            class="mx-auto"
+          />
+        </div>
+
+        <ul class="flex flex-col items-end justify-around h-full">
+          {
+            links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-[#989B9B] hover:text-white transition-colors duration-300 uppercase"
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <hr class="border-gray-700" />
+      <div class="flex flex-col justify-between items-center gap-4 md:flex-row">
+        <p class="text-pretty text-white">
+          &copy; {new Date().getFullYear()} Hanzu. All Rights Reserved.
+        </p>
+
+        <div class="flex gap-4">
+          {
+            socials.map((social) => (
+              <a
+                href={social.href}
+                class="text-white hover:text-[#e71d36] transition-colors duration-300"
+              >
+                <Icon name={social.name} class="w-6 h-6" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
