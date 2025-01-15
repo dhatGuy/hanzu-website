@@ -19,8 +19,8 @@ const items = [
 ---
 
 <section class="p-8 md:p-16" id="about-us">
-  <div class="max-w-7xl mx-auto flex flex-col gap-10">
-    <h2 class="text-5xl font-bold">
+  <div class="max-w-7xl mx-auto flex flex-col gap-12">
+    <h2 class="text-3xl font-bold font-euro">
       <span class="text-white">ABOUT </span>
       <span class="text-[#40E0D0]">US</span>
     </h2>
@@ -29,16 +29,16 @@ const items = [
         <Image
           src={building}
           alt="building"
-          class="h-[36rem] w-full object-cover rounded-[2.5rem]"
+          class="h-[32rem] w-full object-cover rounded-[2.5rem]"
         />
       </div>
       <div class="flex flex-col gap-4">
-        <p class="text-pretty text-blue-300">
+        <p class="text-pretty text-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore.
         </p>
 
-        <p class="text-pretty text-blue-300">
+        <p class="text-pretty text-white">
           Tempor nec feugiat nisl pretium fusce id velit ut tortor pretium
           viverra.
         </p>
@@ -46,7 +46,7 @@ const items = [
         <div class="flex justify-between mt-auto gap-8 flex-wrap">
           {
             items.map((item) => (
-              <div class="flex flex-col items-center bg-[#2ec4b6] p-4 rounded-[2.5rem] flex-1 py-8">
+              <div class="flex flex-col items-center bg-[#2ec4b6] p-4 rounded-[2rem] flex-1 py-8 font-euro">
                 <p class="text-5xl font-bold">
                   <span class="text-white">{item.title}</span>+
                 </p>

@@ -1,55 +1,55 @@
 ---
 import { Image } from "astro:assets";
 import influencer from "/src/assets/images/influencer-marketing.png";
+
+const items = [
+  {
+    number: "01",
+    title: "INFLUENCER MARKETING",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  },
+  {
+    number: "02",
+    title: "COMMUNITY MANAGEMENT",
+  },
+  {
+    number: "03",
+    title: "ESPORTS",
+  },
+  {
+    number: "04",
+    title: "EVENTS",
+  },
+];
 ---
 
 <section class="p-8 md:p-16" id="services">
-  <div class="max-w-7xl mx-auto flex flex-col gap-10">
+  <div class="max-w-7xl mx-auto flex flex-col gap-12">
     <h2 class="text-3xl font-bold font-euro">
       <span class="text-white">OUR </span>
       <span class="text-[#40E0D0]">SERVICES</span>
     </h2>
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="flex flex-col gap-4">
-        <div class="flex flex-col gap-3">
-          <div class="flex flex-col items-baseline">
-            <span class="text-[#FF3131] text-2xl font-bold">01</span>
-            <h3 class="text-white text-2xl font-bold tracking-wider">
-              INFLUENCER MARKETING
-            </h3>
-          </div>
-          <p class="text-[#8B8B8B]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore.
-          </p>
-        </div>
-
-        <div class="gap-3">
-          <div class="flex flex-col items-baseline">
-            <span class="text-[#FF3131] text-2xl font-bold">02</span>
-            <h3 class="text-white text-2xl font-bold tracking-wider">
-              COMMUNITY MANAGEMENT
-            </h3>
-          </div>
-        </div>
-
-        <div class="gap-3">
-          <div class="flex flex-col items-baseline">
-            <span class="text-[#FF3131] text-2xl font-bold">03</span>
-            <h3 class="text-white text-2xl font-bold tracking-wider">
-              ESPORTS
-            </h3>
-          </div>
-        </div>
-
-        <div class="gap-3">
-          <div class="flex flex-col items-baseline">
-            <span class="text-[#FF3131] text-2xl font-bold">04</span>
-            <h3 class="text-white text-2xl font-bold tracking-wider">EVENTS</h3>
-          </div>
-        </div>
+        {
+          items.map((service) => (
+            <div class="flex flex-col gap-3">
+              <div class="flex flex-col items-baseline">
+                <span class="text-[#FF3131] text-2xl font-bold font-euro">
+                  {service.number}
+                </span>
+                <h3 class="text-white text-xl font-bold tracking-wider font-euro">
+                  {service.title}
+                </h3>
+              </div>
+              {service.description && (
+                <p class="text-[#8B8B8B]">{service.description}</p>
+              )}
+            </div>
+          ))
+        }
       </div>
-
       <div class="relative">
         <div class="rounded-3xl overflow-hidden">
           <Image

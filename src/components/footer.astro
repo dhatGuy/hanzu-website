@@ -50,62 +50,88 @@ const socials = [
 ];
 ---
 
-<footer class="py-10">
-  <hr class="mb-24 bg-[#2ec4b6]" />
-  <div class="p-8 md:p-16">
+<footer class="pt-10">
+  <hr class="mb-4 bg-[#2ec4b6]" />
+  <div class="p-4 sm:p-8 md:p-16">
     <div class="max-w-7xl mx-auto flex flex-col gap-8">
-      <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-        <div class="text-white font-bold uppercase text-3xl space-y-6">
-          <p>Interested? <br /> Let's get in touch.</p>
-          <button
-            type="button"
-            class="inline-block rounded-3xl border uppercase border-[#e71d36] bg-[#e71d36] px-12 py-3 text-sm font-bold text-white hover:bg-transparent hover:text-[#e71d36] focus:outline-none focus:ring active:text-[#e71d36]"
+      <div class="flex flex-col gap-8">
+        <div class="hidden md:block lg:hidden mb-8">
+          <a href="#" class="block w-40 mx-auto">
+            <Image
+              src={logo}
+              alt="Brand"
+              width={200}
+              height={200}
+              loading="eager"
+              class="w-full h-auto"
+            />
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-white text-center md:text-left lg:text-left">
+            <div class="space-y-4">
+              <p class="font-extrabold uppercase text-xl sm:text-2xl">
+                Interested? <br /> Let's get in touch.
+              </p>
+              <button
+                type="button"
+                class="inline-block font-euro rounded-3xl border uppercase border-[#e71d36] bg-[#e71d36] px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-bold text-white hover:bg-transparent hover:text-[#e71d36] focus:outline-none focus:ring active:text-[#e71d36] transition-colors duration-300"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center md:hidden lg:flex">
+            <a href="#" class="block w-32 sm:w-40 lg:w-48">
+              <Image
+                src={logo}
+                alt="Brand"
+                width={200}
+                height={200}
+                loading="eager"
+                class="w-full h-auto"
+              />
+            </a>
+          </div>
+
+          <ul
+            class="flex flex-row md:flex-col lg:flex-col justify-center md:justify-start items-center md:items-end gap-4 md:gap-6"
           >
-            Contact Us
-          </button>
+            {
+              links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="hover:text-[#989B9B] text-white transition-colors duration-300 uppercase text-sm sm:text-base"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
         </div>
-
-        <div class="">
-          <Image
-            src={logo}
-            alt="Brand"
-            width={200}
-            height={200}
-            loading="eager"
-            class="mx-auto"
-          />
-        </div>
-
-        <ul class="flex flex-col items-end justify-around h-full">
-          {
-            links.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="text-[#989B9B] hover:text-white transition-colors duration-300 uppercase"
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
       </div>
 
       <hr class="border-gray-700" />
-      <div class="flex flex-col justify-between items-center gap-4 md:flex-row">
-        <p class="text-pretty text-white">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p
+          class="text-pretty text-white text-sm sm:text-base text-center sm:text-left"
+        >
           &copy; {new Date().getFullYear()} Hanzu. All Rights Reserved.
         </p>
 
-        <div class="flex gap-4">
+        <div class="flex flex-wrap justify-center gap-4">
           {
             socials.map((social) => (
               <a
                 href={social.href}
                 class="text-white hover:text-[#e71d36] transition-colors duration-300"
               >
-                <Icon name={social.name} class="w-6 h-6" />
+                <Icon name={social.name} class="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
             ))
           }

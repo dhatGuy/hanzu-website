@@ -13,9 +13,11 @@ const { image, title, description } = Astro.props;
   <Image src={image} alt="" class="h-64 w-full rounded-[2.5rem] object-cover" />
 
   <div class="px-4 py-8">
-    <strong class="text-xl font-bold uppercase text-white"> {title} </strong>
+    <strong class="text-xl font-bold uppercase text-white font-euro">
+      {title}
+    </strong>
 
-    <p class="mt-2 text-pretty text-blue-300">
+    <p class="mt-2 text-pretty text-blue-200 text-justify">
       {description}
     </p>
   </div>
