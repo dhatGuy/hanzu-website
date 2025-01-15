@@ -20,19 +20,19 @@ const items = [
 
 <section class="p-8 md:p-16" id="about-us">
   <div class="max-w-7xl mx-auto flex flex-col gap-12">
-    <h2 class="text-3xl font-bold font-euro">
+    <h2 class="text-3xl font-bold font-euro" data-aos="fade-up">
       <span class="text-white">ABOUT </span>
       <span class="text-[#40E0D0]">US</span>
     </h2>
     <div class="grid grid-cols-1 gap-20 lg:grid-cols-2">
-      <div class="">
+      <div class="" data-aos="fade-right">
         <Image
           src={building}
           alt="building"
           class="h-[32rem] w-full object-cover rounded-[2.5rem]"
         />
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4" data-aos="fade-left">
         <p class="text-pretty text-white">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore.
@@ -45,8 +45,12 @@ const items = [
 
         <div class="flex justify-between mt-auto gap-8 flex-wrap">
           {
-            items.map((item) => (
-              <div class="flex flex-col items-center bg-[#2ec4b6] p-4 rounded-[2rem] flex-1 py-8 font-euro">
+            items.map((item, i) => (
+              <div
+                class="flex flex-col items-center bg-[#2ec4b6] p-4 rounded-[2rem] flex-1 py-8 font-euro"
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+              >
                 <p class="text-5xl font-bold">
                   <span class="text-white">{item.title}</span>+
                 </p>

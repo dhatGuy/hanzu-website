@@ -3,6 +3,7 @@ import "../assets/styles/styles.tailwind.css";
 import "@fontsource/lato";
 import Header from "../components/header.astro";
 import { SEO, type Props } from "astro-seo";
+import "aos/dist/aos.css";
 
 const seoProps: Props = {
   title: "Hanzu - Your Site Title",
@@ -48,6 +49,9 @@ const seoProps: Props = {
     <slot />
 
     <script>
+      import AOS from "aos";
+      AOS.init();
+
       const header = document.getElementById("header");
       const root = document.documentElement;
 

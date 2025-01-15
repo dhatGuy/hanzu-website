@@ -14,6 +14,7 @@
     "@fontsource/lato": "^5.1.1",
     "@types/react": "^19.0.6",
     "@types/react-dom": "^19.0.3",
+    "aos": "3.0.0-beta.6",
     "astro": "^5.1.5",
     "astro-icon": "^1.1.5",
     "astro-seo": "^0.8.4",
@@ -22,5 +23,8 @@
     "sharp": "^0.33.5",
     "tailwindcss": "^3.4.17"
   },
-  "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321"
+  "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321",
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
+  }
 }

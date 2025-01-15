@@ -55,7 +55,7 @@ const socials = [
   <div class="p-4 sm:p-8 md:p-16">
     <div class="max-w-7xl mx-auto flex flex-col gap-8">
       <div class="flex flex-col gap-8">
-        <div class="hidden md:block lg:hidden mb-8">
+        <div class="hidden md:block lg:hidden mb-8" data-aos="fade-up">
           <a href="#" class="block w-40 mx-auto">
             <Image
               src={logo}
@@ -69,7 +69,10 @@ const socials = [
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="text-white text-center md:text-left lg:text-left">
+          <div
+            class="text-white text-center md:text-left lg:text-left"
+            data-aos="fade-right"
+          >
             <div class="space-y-4">
               <p class="font-extrabold uppercase text-xl sm:text-2xl">
                 Interested? <br /> Let's get in touch.
@@ -83,7 +86,10 @@ const socials = [
             </div>
           </div>
 
-          <div class="flex justify-center items-center md:hidden lg:flex">
+          <div
+            class="flex justify-center items-center md:hidden lg:flex"
+            data-aos="fade-up"
+          >
             <a href="#" class="block w-32 sm:w-40 lg:w-48">
               <Image
                 src={logo}
@@ -98,6 +104,7 @@ const socials = [
 
           <ul
             class="flex flex-row md:flex-col lg:flex-col justify-center md:justify-start items-center md:items-end gap-4 md:gap-6"
+            data-aos="fade-left"
           >
             {
               links.map((link) => (
@@ -117,19 +124,28 @@ const socials = [
 
       <hr class="border-gray-700" />
 
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center gap-4"
+        data-aos="fade-up"
+        data-aos-offset="0"
+      >
         <p
           class="text-pretty text-white text-sm sm:text-base text-center sm:text-left"
         >
-          &copy; {new Date().getFullYear()} Hanzu. All Rights Reserved.
+          © {new Date().getFullYear()} Hanzu. All Rights Reserved.
         </p>
 
         <div class="flex flex-wrap justify-center gap-4">
           {
-            socials.map((social) => (
+            socials.map((social, i) => (
               <a
                 href={social.href}
                 class="text-white hover:text-[#e71d36] transition-colors duration-300"
+                aria-label={social.name}
+                title={social.name}
+                data-aos="slide-up"
+                data-aos-delay={i * 100}
+                data-aos-offset="0"
               >
                 <Icon name={social.name} class="w-5 h-5 sm:w-6 sm:h-6" />
               </a>
