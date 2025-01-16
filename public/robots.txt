@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://hanzu.com/sitemap.xml
+
+# Common files to disallow
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
