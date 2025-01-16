@@ -10,6 +10,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://hanzu.vercel.app",
   integrations: [
     react(),
     tailwind({ applyBaseStyles: false }),

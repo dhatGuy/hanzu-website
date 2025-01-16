@@ -1,12 +1,16 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import logo from "../assets/images/Hanzu-Logo-White.png";
+import originalBgImg from "../assets/images/BG.png";
+
+const bgImg = await getImage({ src: originalBgImg, format: "webp" });
 ---
 
 <header
-  class="overflow-hidden fixed top-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-bg bg-cover transition-all duration-300"
+  class="overflow-hidden fixed top-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-cover transition-all duration-300"
   id="header"
   data-aos="fade-down"
+  style={`background-image: url(${bgImg.src});`}
 >
   <nav
     class="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 px-4 sm:px-6 lg:px-8 transition-all duration-300"

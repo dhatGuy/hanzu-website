@@ -4,7 +4,10 @@ import "@fontsource/lato";
 import Header from "../components/header.astro";
 import { SEO, type Props } from "astro-seo";
 import "aos/dist/aos.css";
+import { getImage } from "astro:assets";
+import originalBgImg from "../assets/images/BG.png";
 
+const bgImg = await getImage({ src: originalBgImg, format: "webp" });
 const seoProps: Props = {
   title: "Hanzu - Influencer Marketing Solutions",
   description:
@@ -46,7 +49,10 @@ const seoProps: Props = {
     <SEO {...seoProps} />
     <title>Hanzu</title>
   </head>
-  <body class="bg-[rgb(2,35,62)] bg-bg bg-cover bg-no-repeat">
+  <body
+    class={`bg-[rgb(2,35,62)] bg-cover bg-no-repeat`}
+    style={`background-image: url(${bgImg.src});`}
+  >
     <Header />
     <slot />
 

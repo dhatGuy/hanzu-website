@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://hanzu.com/sitemap.xml
+Sitemap: https://hanzu.com/sitemap-index.xml
 
 # Common files to disallow
 Disallow: /api/
