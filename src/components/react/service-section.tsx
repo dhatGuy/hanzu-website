@@ -60,7 +60,7 @@ const ServicesSection = ({ items }) => {
                   {index === activeIndex && (
                     <>
                       <div
-                        className="rounded-3xl overflow-hidden md:hidden"
+                        className="rounded-3xl overflow-hidden md:hidden border border-[#2C688E]"
                         aria-haspopup="dialog"
                         aria-expanded="false"
                         aria-controls={`service-modal-${service.number}`}
@@ -92,7 +92,7 @@ const ServicesSection = ({ items }) => {
 
         <div className="relative flex-1 hidden md:block" data-aos="fade-left">
           <div
-            className="rounded-3xl overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
+            className="rounded-3xl border border-[#2C688E] overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
             aria-haspopup="dialog"
             aria-expanded="false"
             aria-controls={`service-modal-${items[activeIndex].number}`}
