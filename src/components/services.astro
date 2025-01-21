@@ -23,48 +23,93 @@ const items = [
 ---
 
 <section class="p-8 md:p-16 overflow-hidden" id="services">
-  <div class="max-w-7xl mx-auto flex flex-col gap-12">
-    <h2
-      class="text-3xl font-bold font-euro text-center md:text-left"
-      data-aos="fade-up"
-    >
-      <span class="text-white">OUR </span>
-      <span class="text-[#40E0D0]">SERVICES</span>
-    </h2>
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div class="flex flex-col gap-4">
-        {
-          items.map((service, index) => (
+  <div class="flex items-center">
+    <div class="max-w-7xl mx-auto flex flex-col gap-12 flex-1">
+      <h2
+        class="text-3xl font-bold font-euro text-center md:text-left"
+        data-aos="fade-up"
+      >
+        <span class="text-white">OUR </span>
+        <span class="text-[#40E0D0]">SERVICES</span>
+      </h2>
+      <div class="grid gap-12 items-center">
+        <div class="flex flex-col gap-4">
+          <!-- <div class="flex flex-col gap-3" data-aos="fade-right">
             <div
-              class="flex flex-col gap-3"
-              data-aos="fade-right"
-              data-aos-delay={index * 100}
+              class="flex md:flex-col items-center md:items-start gap-4 md:gap-0 mx-auto md:mx-0"
             >
-              <div class="flex items-baseline mx-auto">
-                <span class="text-[#FF3131] text-2xl font-bold font-euro">
-                  {service.number}
-                </span>
-                {/* one word per line */}
-                <h3 class="text-white text-xl font-bold tracking-wider font-euro">
-                  {service.title}
-                </h3>
-              </div>
-              {service.description && (
-                <p class="text-[#8B8B8B]">{service.description}</p>
-              )}
+              <span class="text-[#FF3131] text-4xl font-bold font-euro">
+                {service.number}
+              </span>
+  
+              <div class="w-0.5 self-center h-8 bg-[#ff9f1c] md:hidden"></div>
+  
+              <h3
+                class="text-white text-xl font-bold tracking-wider max-w-32 md:max-w-full font-euro"
+              >
+                {service.title}
+              </h3>
             </div>
-          ))
-        }
-      </div>
-      <div class="relative" data-aos="fade-left">
-        <div class="rounded-3xl overflow-hidden">
-          <Image
-            src={influencer}
-            alt="Influencer Marketing"
-            class="w-full h-full"
-            loading="eager"
-          />
+  
+            <div class="rounded-3xl overflow-hidden md:hidden">
+              <Image
+                src={influencer}
+                alt="Influencer Marketing"
+                class="w-full h-full aspect-video object-contain"
+                loading="eager"
+              />
+            </div>
+  
+            {
+              service.description && (
+                <p class="text-[#8B8B8B]">{service.description}</p>
+              )
+            }
+          </div> -->
+          {
+            items.map((service, index) => (
+              <div class="flex flex-col gap-3" data-aos="fade-right">
+                <div class="flex md:flex-col items-center md:items-start gap-4 md:gap-0 mx-auto md:mx-0">
+                  <span class="text-[#FF3131] text-4xl font-bold font-euro">
+                    {service.number}
+                  </span>
+
+                  <div class="w-0.5 self-center h-8 bg-[#ff9f1c] md:hidden" />
+
+                  <h3 class="text-white text-xl font-bold tracking-wider max-w-32 md:max-w-full font-euro">
+                    {service.title}
+                  </h3>
+                </div>
+
+                {index === 0 && (
+                  <div class="rounded-3xl overflow-hidden md:hidden">
+                    <Image
+                      src={influencer}
+                      alt="Influencer Marketing"
+                      class="w-full h-full aspect-video object-contain"
+                      loading="eager"
+                    />
+                  </div>
+                )}
+
+                {service.description && (
+                  <p class="text-[#8B8B8B]">{service.description}</p>
+                )}
+              </div>
+            ))
+          }
         </div>
+      </div>
+    </div>
+
+    <div class="relative flex-1" data-aos="fade-left">
+      <div class="rounded-3xl overflow-hidden">
+        <Image
+          src={influencer}
+          alt="Influencer Marketing"
+          class="w-full h-full aspect-video object-contain"
+          loading="eager"
+        />
       </div>
     </div>
   </div>
