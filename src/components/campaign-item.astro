@@ -1,20 +1,21 @@
 ---
 import { Image } from "astro:assets";
+import CampaignModal from "./campaign-modal.astro";
 
 interface Props {
-  image: ImageMetadata;
-  title: string;
-  description: string;
+  campaign: { image: ImageMetadata; title: string; description: string };
+  index: number;
 }
-const { image, title, description } = Astro.props;
+const { campaign, index } = Astro.props;
+const { image, title, description } = campaign;
 ---
 
 <div
   class="relative block rounded-[2.5rem] border border-[#26557d] cursor-pointer hover:scale-105 transition-all duration-200"
   aria-haspopup="dialog"
   aria-expanded="false"
-  aria-controls="hs-scale-animation-modal"
-  data-hs-overlay="#hs-scale-animation-modal"
+  aria-controls={`campaign-modal-${index}`}
+  id={`campaign-${index}`}
 >
   <Image
     src={image}
@@ -32,3 +33,10 @@ const { image, title, description } = Astro.props;
     </p>
   </div>
 </div>
+<CampaignModal campaign={campaign} index={index} />
+<script define:vars={{ index }}>
+  const openBtn = document.getElementById(`campaign-${index}`);
+  openBtn.addEventListener("click", () => {
+    HSOverlay.open(`#campaign-modal-${index}`);
+  });
+</script>

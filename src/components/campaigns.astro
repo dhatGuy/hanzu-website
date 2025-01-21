@@ -3,24 +3,23 @@ import dota2 from "../assets/images/dota-2.png";
 import leagueoflegends from "../assets/images/league-of-legends.webp";
 import wow from "../assets/images/wow-legends.jpg";
 import CampaignItem from "./campaign-item.astro";
-import CampaignModal from "./campaign-modal.astro";
 
 const items = [
   {
     image: wow,
-    title: "Lorem ipsum",
+    title: "World of Warships",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   },
   {
     image: dota2,
-    title: "Lorem ipsum",
+    title: "Dota 2",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   },
   {
     image: leagueoflegends,
-    title: "Lorem ipsum",
+    title: "League of Legends",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   },
@@ -38,15 +37,10 @@ const items = [
       {
         items.map((item, index) => (
           <div data-aos="fade-up" data-aos-delay={index * 200}>
-            <CampaignItem
-              image={item.image}
-              title={item.title}
-              description={item.description}
-            />
+            <CampaignItem campaign={item} index={index} />
           </div>
         ))
       }
     </div>
   </div>
-  <CampaignModal />
 </section>
