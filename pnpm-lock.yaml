@@ -38,6 +38,9 @@ importers:
       astro-seo:
         specifier: ^0.8.4
         version: 0.8.4(typescript@5.7.3)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       preline:
         specifier: ^2.7.0
         version: 2.7.0
@@ -50,6 +53,9 @@ importers:
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
+      tailwind-merge:
+        specifier: ^2.6.0
+        version: 2.6.0
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -2239,6 +2245,9 @@ packages:
     resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+
+  tailwind-merge@2.6.0:
+    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
 
   tailwindcss@3.4.17:
     resolution: {integrity: sha512-w33E2aCvSDP0tW9RZuNXadXlkHXqFzSkQew/aIa2i/Sj8fThxwovwlXHSPXTbAHwEIhBFXAedUhP2tueAKP8Og==}
@@ -5233,6 +5242,8 @@ snapshots:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.1.1
+
+  tailwind-merge@2.6.0: {}
 
   tailwindcss@3.4.17:
     dependencies:
