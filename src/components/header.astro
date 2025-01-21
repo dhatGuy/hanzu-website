@@ -7,19 +7,18 @@ const bgImg = await getImage({ src: originalBgImg, format: "webp" });
 ---
 
 <header
-  class="overflow-hidden fixed top-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-cover transition-all duration-300"
+  class="overflow-hidden fixed top-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-cover transition-all duration-300 bg-[#020d18]"
   id="header"
   data-aos="fade-down"
-  style={`background-image: url(${bgImg.src});`}
 >
   <nav
-    class="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 px-4 sm:px-6 lg:px-8 transition-all duration-300"
+    class="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-center md:gap-3 px-4 sm:px-6 lg:px-8 transition-all duration-300"
   >
     <div
-      class="flex justify-between items-center gap-x-1 py-4 transition-all duration-300"
+      class="flex justify-center items-center gap-x-1 py-4 transition-all duration-300"
       id="nav-content"
     >
-      <a class="flex-none" href="#" aria-label="Brand">
+      <a class="flex-none mx-auto" href="#" aria-label="Brand">
         <Image
           src={logo}
           alt="Brand"
@@ -30,147 +29,6 @@ const bgImg = await getImage({ src: originalBgImg, format: "webp" });
           loading="eager"
         />
       </a>
-      <button
-        type="button"
-        id="menu-toggle"
-        class="md:hidden relative size-9 flex justify-center items-center font-medium text-[12px] rounded-lg text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 disabled:opacity-50 disabled:pointer-events-none"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        aria-label="Toggle navigation"
-      >
-        <svg
-          id="menu-open-icon"
-          class="size-4 transition-opacity duration-300"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="3" x2="21" y1="6" y2="6"></line>
-          <line x1="3" x2="21" y1="12" y2="12"></line>
-          <line x1="3" x2="21" y1="18" y2="18"></line>
-        </svg>
-        <svg
-          id="menu-close-icon"
-          class="hidden size-4 transition-opacity duration-300"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M18 6 6 18"></path>
-          <path d="m6 6 12 12"></path>
-        </svg>
-      </button>
-    </div>
-
-    <div
-      id="mobile-menu"
-      class="md:block overflow-hidden transition-all duration-300 basis-full grow max-h-0 md:max-h-none"
-    >
-      <div
-        class="flex flex-col md:flex-row md:items-center gap-5 mt-5 md:mt-0 md:bg-transparent p-4 md:p-0"
-      >
-        <div class="grow">
-          <div
-            class="flex flex-col md:flex-row md:justify-end md:items-center gap-4 md:gap-20"
-          >
-            <!-- Navigation items remain the same -->
-            <a
-              class="text-sm text-white uppercase hover:text-gray-300 transition-colors duration-200"
-              href="#services"
-              aria-current="page"
-              data-aos="fade-left"
-              data-aos-delay="100"
-            >
-              <span class="flex items-center gap-2">
-                <svg
-                  class="shrink-0 size-4 md:hidden"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
-                  <path
-                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                  ></path>
-                </svg>
-                Services
-              </span>
-            </a>
-
-            <a
-              class="text-sm text-white uppercase hover:text-gray-300 transition-colors duration-200"
-              href="#campaigns"
-              data-aos="fade-left"
-              data-aos-delay="200"
-            >
-              <span class="flex items-center gap-2">
-                <svg
-                  class="shrink-0 size-4 md:hidden"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                Campaigns
-              </span>
-            </a>
-
-            <a
-              class="text-sm text-white uppercase hover:text-gray-300 transition-colors duration-200"
-              href="#about-us"
-              data-aos="fade-left"
-              data-aos-delay="300"
-            >
-              <span class="flex items-center gap-2">
-                <svg
-                  class="shrink-0 size-4 md:hidden"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 12h.01"></path>
-                  <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
-                  <path d="M22 13a18.15 18.15 0 0 1-20 0"></path>
-                  <rect width="20" height="14" x="2" y="6" rx="2"></rect>
-                </svg>
-                About Us
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   </nav>
 </header>

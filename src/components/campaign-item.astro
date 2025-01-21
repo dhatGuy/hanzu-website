@@ -9,7 +9,13 @@ interface Props {
 const { image, title, description } = Astro.props;
 ---
 
-<a href="#" class="relative block rounded-[2.5rem] border border-[#26557d]">
+<div
+  class="relative block rounded-[2.5rem] border border-[#26557d] cursor-pointer hover:scale-105 transition-all duration-200"
+  aria-haspopup="dialog"
+  aria-expanded="false"
+  aria-controls="hs-scale-animation-modal"
+  data-hs-overlay="#hs-scale-animation-modal"
+>
   <Image
     src={image}
     alt={title}
@@ -25,4 +31,4 @@ const { image, title, description } = Astro.props;
       {description}
     </p>
   </div>
-</a>
+</div>

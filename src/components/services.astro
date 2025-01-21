@@ -7,26 +7,27 @@ const items = [
     number: "01",
     title: "INFLUENCER MARKETING",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+      "Connecting brands with gaming influencers to amplify their reach.",
   },
   {
     number: "02",
-    title: "COMMUNITY MANAGEMENT",
+    title: "ESPORTS",
+    description: "Organizing and supporting competitive gaming experiences.",
   },
   {
     number: "03",
-    title: "ESPORTS",
-  },
-  {
-    number: "04",
-    title: "EVENTS",
+    title: "VIDEO MARKETING",
+    description: "Creating engaging video content to boost brand visibility",
   },
 ];
 ---
 
 <section class="p-8 md:p-16 overflow-hidden" id="services">
   <div class="max-w-7xl mx-auto flex flex-col gap-12">
-    <h2 class="text-3xl font-bold font-euro" data-aos="fade-up">
+    <h2
+      class="text-3xl font-bold font-euro text-center md:text-left"
+      data-aos="fade-up"
+    >
       <span class="text-white">OUR </span>
       <span class="text-[#40E0D0]">SERVICES</span>
     </h2>
@@ -39,10 +40,11 @@ const items = [
               data-aos="fade-right"
               data-aos-delay={index * 100}
             >
-              <div class="flex flex-col items-baseline">
+              <div class="flex items-baseline mx-auto">
                 <span class="text-[#FF3131] text-2xl font-bold font-euro">
                   {service.number}
                 </span>
+                {/* one word per line */}
                 <h3 class="text-white text-xl font-bold tracking-wider font-euro">
                   {service.title}
                 </h3>

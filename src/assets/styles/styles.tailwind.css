@@ -4,8 +4,8 @@
 
 @font-face {
   font-family: 'Eurostile Extended';
-  src: url('/fonts/eurostileextendedblack.ttf') format('truetype');
-  font-weight: normal;
+  src: url('/fonts/eurostile-extended-black.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }

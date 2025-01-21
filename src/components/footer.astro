@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import logo from "../assets/images/Hanzu-Logo-White.png";
 
@@ -63,31 +62,27 @@ const socials = [
               width={200}
               height={200}
               loading="eager"
-              class="w-full h-auto aspect-square"
+              class="w-full h-auto object-contain aspect-square"
             />
           </a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center"
+        >
           <div
-            class="text-white text-center md:text-left lg:text-left"
+            class="text-white text-center md:text-left lg:text-left order-2 md:order-1"
             data-aos="fade-right"
           >
             <div class="space-y-4">
               <p class="font-extrabold uppercase text-xl sm:text-2xl">
                 Interested? <br /> Let's get in touch.
               </p>
-              <button
-                type="button"
-                class="inline-block font-euro rounded-3xl border uppercase border-[#e71d36] hover:bg-[#e71d36] px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-bold text-[#e71d36] hover:text-white focus:outline-none focus:ring active:text-white transition-colors duration-300"
-              >
-                Contact Us
-              </button>
             </div>
           </div>
 
           <div
-            class="flex justify-center items-center md:hidden lg:flex"
+            class="flex justify-center items-center md:hidden lg:flex order-1 md:order-2"
             data-aos="fade-up"
           >
             <a href="#" class="block w-32 sm:w-40 lg:w-48">
@@ -97,28 +92,21 @@ const socials = [
                 width={200}
                 height={200}
                 loading="eager"
-                class="w-full h-auto"
+                class="w-full h-auto object-contain aspect-square"
               />
             </a>
           </div>
 
-          <ul
-            class="flex flex-row md:flex-col lg:flex-col justify-center md:justify-start items-center md:items-end gap-4 md:gap-6"
-            data-aos="fade-left"
+          <div
+            class="flex flex-row md:flex-col lg:flex-col justify-center md:justify-start items-center md:items-end gap-4 md:gap-6 order-3 md:order-3"
           >
-            {
-              links.map((link) => (
-                <li>
-                  <a
-                    href={link.href}
-                    class="hover:text-[#989B9B] text-white transition-colors duration-300 uppercase text-sm sm:text-base"
-                  >
-                    {link.title}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
+            <button
+              type="button"
+              class="inline-block font-euro rounded-3xl border uppercase border-[#e71d36] hover:bg-[#e71d36] px-6 sm:px-8 py-2.5 sm:py-3 text-sm font-bold text-[#e71d36] hover:text-white focus:outline-none focus:ring active:text-white transition-colors duration-300"
+            >
+              Contact Us
+            </button>
+          </div>
         </div>
       </div>
 
@@ -127,7 +115,7 @@ const socials = [
       <div
         class="flex flex-col sm:flex-row justify-between items-center gap-4"
         data-aos="fade-up"
-        data-aos-offset="0"
+        data-aos-offset="-100"
       >
         <p
           class="text-pretty text-white text-sm sm:text-base text-center sm:text-left"
@@ -135,7 +123,7 @@ const socials = [
           © {new Date().getFullYear()} Hanzu. All Rights Reserved.
         </p>
 
-        <div class="flex flex-wrap justify-center gap-4">
+        <!-- <div class="flex flex-wrap justify-center gap-4">
           {
             socials.map((social, i) => (
               <a
@@ -151,7 +139,7 @@ const socials = [
               </a>
             ))
           }
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

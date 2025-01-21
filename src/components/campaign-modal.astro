@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import wow from "../assets/images/wow-legends.jpg";
+import x from "../assets/images/x.png";
+---
+
+<div
+  id="hs-scale-animation-modal"
+  class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none"
+  role="dialog"
+  tabindex="-1"
+  aria-labelledby="hs-scale-animation-modal-label"
+>
+  <div
+    class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 h-[calc(100%-3.5rem)] sm:mx-auto lg:max-w-5xl md:max-w-3xl lg:w-full md:mx-auto"
+  >
+    <div
+      class="max-h-full flex flex-col bg-white shadow-sm rounded-t-3xl pointer-events-auto"
+    >
+      <div class="flex items-center justify-center py-3 px-4 relative">
+        <h3
+          id="hs-scale-animation-modal-label"
+          class="font-bold text-lg uppercase text-center"
+        >
+          World of Warships
+        </h3>
+        <button
+          type="button"
+          class="absolute -right-2 md:right-2 -top-2 md:top-2 size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-red-800 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+          aria-label="Close"
+          data-hs-overlay="#hs-scale-animation-modal"
+        >
+          <span class="sr-only">Close</span>
+          <Image src={x} alt="Close" class="w-4 h-4 object-contain" />
+        </button>
+      </div>
+      <div class="p-4 overflow-y-auto bg-[#020d18] lg:px-28">
+        <div class="space-y-4">
+          <div class="flex flex-col gap-6 relative overflow-hidden">
+            <div class="relative">
+              <Image
+                src={wow}
+                alt="World of Warships"
+                class="w-full h-auto aspect-square md:aspect-video object-contain border border-white rounded-3xl"
+              />
+              <button
+                class="absolute inset-0 m-auto w-16 h-16 bg-[#ff9f1c] rounded-full flex items-center justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 text-white"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <p class="text-white leading-7">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+              nesciunt labore dignissimos iste. Ducimus reprehenderit
+              perspiciatis assumenda repellendus voluptatibus quis.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-6 relative overflow-hidden">
+            <Image
+              src={wow}
+              alt="World of Warships"
+              class="w-full h-auto aspect-square md:aspect-video object-contain border border-white rounded-3xl"
+            />
+            <p class="text-white leading-7">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+              nesciunt labore dignissimos iste. Ducimus reprehenderit
+              perspiciatis assumenda repellendus voluptatibus quis.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-6 relative overflow-hidden">
+            <Image
+              src={wow}
+              alt="World of Warships"
+              class="w-full h-auto aspect-square md:aspect-video object-contain border border-white rounded-3xl"
+            />
+            <p class="text-white leading-7">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+              nesciunt labore dignissimos iste. Ducimus reprehenderit
+              perspiciatis assumenda repellendus voluptatibus quis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
