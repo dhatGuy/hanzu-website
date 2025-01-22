@@ -77,7 +77,9 @@ const ServicesSection = ({ items }) => {
                       </div>
 
                       {service.description && (
-                        <p className="text-[#8B8B8B]">{service.description}</p>
+                        <p className="text-[#8B8B8B]" data-aos="fade-up-right">
+                          {service.description}
+                        </p>
                       )}
                     </>
                   )}

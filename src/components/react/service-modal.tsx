@@ -12,8 +12,8 @@ export default function ServiceModal({ service }: any) {
       <div className="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all max-w-full max-h-full h-full">
         <div className="relative flex flex-col-reverse md:flex-row justify-center items-center h-full px-3 md:px-20 gap-6">
           <div className="text-white space-y-2">
-            <h2 className="text-4xl font-black">{service.title}</h2>
-            <p>{service.description}</p>
+            <h2 className="text-4xl font-euro">{service.title}</h2>
+            <p className="text-lg">{service.description}</p>
           </div>
 
           <div className="relative">
