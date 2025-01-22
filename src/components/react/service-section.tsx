@@ -47,7 +47,7 @@ const ServicesSection = ({ items }) => {
 
                     <h3
                       className={cn(
-                        "text-white text-xl font-bold max-w-32 md:max-w-full font-euro",
+                        "text-white text-lg md:text-xl font-bold max-w-32 sm:max-w-full font-euro",
                         ""
                       )}
                     >
