@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         sans: ["Lato", ...defaultTheme.fontFamily.sans],
         euro: ["Eurostile Extended", ...defaultTheme.fontFamily.sans],
+        "euro-normal": ["EurostileExt-Normal", ...defaultTheme.fontFamily.sans],
       },
     },
   },

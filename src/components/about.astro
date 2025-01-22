@@ -20,7 +20,10 @@ const items = [
 
 <section class="p-8 md:p-16 overflow-hidden" id="about-us">
   <div class="max-w-7xl mx-auto flex flex-col gap-12">
-    <h2 class="text-3xl font-bold font-euro" data-aos="fade-up">
+    <h2
+      class="text-2xl md:text-5xl font-bold font-euro mx-auto md:mx-0 text-center md:text-left"
+      data-aos="fade-up"
+    >
       <span class="text-white">ABOUT </span>
       <span class="text-[#40E0D0]">US</span>
     </h2>
@@ -33,20 +36,29 @@ const items = [
         />
       </div>
       <div class="flex flex-col gap-12" data-aos="fade-left">
-        <p class="text-pretty text-white">
-          Hanzu is a marketing and consultancy agency specializing in gaming and
-          esports. We design impactful campaigns through influencer marketing,
-          community management, esports and gaming events. By leveraging key
-          digital platforms, we engage gaming communities, drive streaming
-          content, and manage social media presence, helping brands build strong
-          connections and achieve measurable results.
-        </p>
+        <div class="flex flex-col gap-4">
+          <p class="text-pretty text-white text-lg">
+            Hanzu is a marketing and consultancy agency specializing in gaming
+            and esports.
+          </p>
+
+          <p class="text-pretty text-white text-lg">
+            We design impactful campaigns through influencer marketing,
+            community management, esports and gaming events.
+          </p>
+
+          <p class="text-pretty text-white text-lg">
+            By leveraging key digital platforms, we engage gaming communities,
+            drive streaming content, and manage social media presence, helping
+            brands build strong connections and achieve measurable results.
+          </p>
+        </div>
 
         <div class="flex justify-between gap-8 flex-wrap">
           {
             items.map((item, i) => (
               <div
-                class="flex flex-col items-center bg-[#2ec4b6] p-4 rounded-[2rem] flex-1 py-8 font-euro border border-[#26557d]"
+                class="flex flex-col items-center bg-[#2ec4b6] p-4 rounded-[2rem] flex-1 py-8 font-euro border border-[#26557d] hover:scale-105 transition-all duration-300"
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
               >

@@ -19,7 +19,7 @@ export default function ServiceModal({ service }: any) {
           <div className="relative">
             <button
               type="button"
-              className="absolute z-10 -right-2 -top-2 size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-red-800 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+              className="absolute z-10 -right-2 -top-2 size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-[#e71d36] text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
               aria-label="Close"
               data-hs-overlay={`#service-modal-${service.number}`}
             >
@@ -39,8 +39,3 @@ export default function ServiceModal({ service }: any) {
     </div>
   );
 }
-
-// {/* <script>
-//   window.addEventListener('load', () => {
-//   });
-// </script> */}
