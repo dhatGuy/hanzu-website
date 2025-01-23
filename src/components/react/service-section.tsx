@@ -125,8 +125,8 @@ const ServicesSection = ({ items }) => {
             className="rounded-3xl border border-[#2C688E] overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300"
             aria-haspopup="dialog"
             aria-expanded="false"
+            role="button"
             aria-controls={`service-modal-${items[activeIndex].number}`}
-            // data-hs-overlay={`#service-modal-${items[activeIndex].number}`}
             onClick={() =>
               window.HSOverlay.open(
                 `#service-modal-${items[activeIndex].number}`
