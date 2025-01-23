@@ -61,6 +61,7 @@ const ServicesSection = ({ items }) => {
                         className="rounded-3xl overflow-hidden md:hidden border border-[#2C688E] relative"
                         aria-haspopup="dialog"
                         aria-expanded="false"
+                        role="button"
                         aria-controls={`service-modal-${service.number}`}
                         onClick={() =>
                           window.HSOverlay.open(

@@ -60,7 +60,7 @@ export default function ServiceModal({ service }: any) {
               <span className="sr-only">Close</span>
               <img src={x.src} alt="Close" className="w-4 h-4 object-contain" />
             </button>
-            <div className="rounded-2xl aspect-square md:aspect-video object-cover overflow-hidden border-2 border-[#2C688E]">
+            <div className="rounded-2xl object-cover overflow-hidden border-2 border-[#2C688E]">
               {service.video && (
                 <video
                   ref={videoRef}
@@ -69,14 +69,14 @@ export default function ServiceModal({ service }: any) {
                   // loop
                   muted
                   controls
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover aspect-video"
                 />
               )}
               {service.image && (
                 <img
                   src={service.image.src}
                   alt={service.title}
-                  className="w-full h-full object-cover scale-150"
+                  className="w-full h-full object-cover scale-150 aspect-square md:aspect-video"
                 />
               )}
             </div>
