@@ -15,7 +15,7 @@ const ServicesSection = ({ items }) => {
     <section className="p-8 md:p-16 overflow-hidden" id="services">
       <div className="max-w-7xl mx-auto flex items-center">
         <div className="flex flex-col gap-12 flex-1">
-          <h2 className="text-2xl md:text-4xl font-bold font-euro text-center md:text-left mx-auto md:mx-0">
+          <h2 className="text-2xl md:text-[40] font-bold font-euro text-center md:text-left mx-auto md:mx-0">
             <span className="text-white">OUR </span>
             <span className="text-[#40E0D0]">SERVICES</span>
           </h2>
