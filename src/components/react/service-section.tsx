@@ -1,5 +1,5 @@
+import { cn } from "#/lib/utils";
 import { useEffect, useState } from "react";
-import { cn } from "../../lib/utils";
 import ServiceModal from "./service-modal";
 
 // @ts-expect-error
@@ -58,7 +58,7 @@ const ServicesSection = ({ items }) => {
                   {index === activeIndex && (
                     <>
                       <div
-                        className="rounded-3xl overflow-hidden md:hidden border border-[#2C688E]"
+                        className="rounded-3xl overflow-hidden md:hidden border border-[#2C688E] relative"
                         aria-haspopup="dialog"
                         aria-expanded="false"
                         aria-controls={`service-modal-${service.number}`}
@@ -68,12 +68,42 @@ const ServicesSection = ({ items }) => {
                           )
                         }
                       >
-                        <img
-                          src={service?.image.src}
-                          alt={service.title}
-                          className="w-full h-full aspect-video object-contain"
-                          loading="eager"
-                        />
+                        {service.video && (
+                          <>
+                            <button className="absolute inset-0 m-auto w-16 h-16 bg-[#ff9f1c] rounded-full flex items-center justify-center z-10">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="white"
+                                viewBox="0 0 24 24"
+                                strokeWidth="1.5"
+                                stroke="currentColor"
+                                className="w-8 h-8 text-white"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z"
+                                ></path>
+                              </svg>
+                            </button>
+                            <video
+                              disablePictureInPicture
+                              disableRemotePlayback
+                              className="w-full h-full aspect-video object-contain"
+                              controls={false}
+                            >
+                              <source src={service.video} type="video/mp4" />
+                            </video>
+                          </>
+                        )}
+                        {service.image && (
+                          <img
+                            src={service?.image.src}
+                            alt={service.title}
+                            className="w-full h-full aspect-video object-contain"
+                            loading="eager"
+                          />
+                        )}
                       </div>
 
                       {service.description && (
@@ -103,12 +133,41 @@ const ServicesSection = ({ items }) => {
               )
             }
           >
-            <img
-              src={items[activeIndex].image.src}
-              alt={items[activeIndex].title}
-              className="w-full h-full aspect-video object-contain"
-              loading="eager"
-            />
+            {items[activeIndex].video && (
+              <>
+                <button className="absolute inset-0 m-auto w-16 h-16 bg-[#ff9f1c] rounded-full flex items-center justify-center z-10">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-8 h-8 text-white"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z"
+                    ></path>
+                  </svg>
+                </button>
+                <video
+                  disablePictureInPicture
+                  disableRemotePlayback
+                  className="w-full h-full aspect-video object-contain"
+                  controls={false}
+                  src={items[activeIndex].video}
+                />
+              </>
+            )}
+            {items[activeIndex].image && (
+              <img
+                src={items[activeIndex].image.src}
+                alt={items[activeIndex].title}
+                className="w-full h-full aspect-video object-contain"
+                loading="eager"
+              />
+            )}
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 import building from "#/assets/images/building.jpg";
 import influencer from "#/assets/images/influencer-marketing.png";
 import { getImage } from "astro:assets";
+import marketingVideo from "../assets/videos/video_marketing.mp4";
 import ServicesSection from "./react/service-section";
 
 const optimizeImage = await getImage({
@@ -32,7 +33,7 @@ const items = [
     number: "03",
     title: "VIDEO MARKETING",
     description: "Creating engaging video content to boost brand visibility",
-    image: optimizeImage,
+    video: marketingVideo,
   },
 ];
 ---

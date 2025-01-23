@@ -3,7 +3,13 @@ import { Image } from "astro:assets";
 import CampaignModal from "./campaign-modal.astro";
 
 interface Props {
-  campaign: { image: ImageMetadata; title: string; description: string };
+  campaign: {
+    image: ImageMetadata;
+    title: string;
+    description: string;
+    media: { mobile: ImageMetadata[]; desktop: ImageMetadata[] };
+    mediaDesc: string[];
+  };
   index: number;
 }
 const { campaign, index } = Astro.props;

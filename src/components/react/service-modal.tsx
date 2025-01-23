@@ -1,6 +1,31 @@
 import x from "#/assets/images/x.png";
+import { useEffect, useRef } from "react";
 
 export default function ServiceModal({ service }: any) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const { element } = window.HSOverlay.getInstance(
+      `#service-modal-${service.number}`,
+      true
+    );
+
+    element.on("open", (instance) => {
+      videoRef.current?.play();
+    });
+    element.on("close", (instance) => {
+      videoRef.current?.pause();
+    });
+
+    return () => {
+      element.off("open", (instance) => {
+        videoRef.current?.play();
+      });
+      element.off("close", (instance) => {
+        videoRef.current?.pause();
+      });
+    };
+  }, []);
   return (
     <div
       id={`service-modal-${service.number}`}
@@ -27,11 +52,24 @@ export default function ServiceModal({ service }: any) {
               <img src={x.src} alt="Close" className="w-4 h-4 object-contain" />
             </button>
             <div className="rounded-2xl aspect-square md:aspect-video object-cover overflow-hidden border-2 border-[#2C688E]">
-              <img
-                src={service.image.src}
-                alt={service.title}
-                className="w-full h-full object-cover scale-150"
-              />
+              {service.video && (
+                <video
+                  ref={videoRef}
+                  src={service.video}
+                  // autoPlay
+                  // loop
+                  muted
+                  controls
+                  className="w-full h-full object-cover"
+                />
+              )}
+              {service.image && (
+                <img
+                  src={service.image.src}
+                  alt={service.title}
+                  className="w-full h-full object-cover scale-150"
+                />
+              )}
             </div>
           </div>
         </div>
