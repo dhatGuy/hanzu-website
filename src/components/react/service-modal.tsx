@@ -5,27 +5,36 @@ export default function ServiceModal({ service }: any) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const { element } = window.HSOverlay.getInstance(
-      `#service-modal-${service.number}`,
-      true
-    );
+    const initializeOverlay = () => {
+      if (typeof window === "undefined" || !window.HSOverlay) {
+        return;
+      }
 
-    element.on("open", (instance) => {
-      videoRef.current?.play();
-    });
-    element.on("close", (instance) => {
-      videoRef.current?.pause();
-    });
+      try {
+        const { element } =
+          window.HSOverlay.getInstance(
+            `#service-modal-${service.number}`,
+            true
+          ) || {};
 
-    return () => {
-      element.off("open", (instance) => {
-        videoRef.current?.play();
-      });
-      element.off("close", (instance) => {
-        videoRef.current?.pause();
-      });
+        if (!element) {
+          console.warn("HSOverlay element not found");
+          return;
+        }
+
+        const handleOpen = () => videoRef.current?.play();
+        const handleClose = () => videoRef.current?.pause();
+
+        element.on("open", handleOpen);
+        element.on("close", handleClose);
+      } catch (error) {
+        console.warn("HSOverlay initialization failed:", error);
+      }
     };
-  }, []);
+
+    const timeoutId = setTimeout(initializeOverlay, 100);
+    return () => clearTimeout(timeoutId);
+  }, [service.number]);
   return (
     <div
       id={`service-modal-${service.number}`}
