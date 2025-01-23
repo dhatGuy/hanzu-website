@@ -1,4 +1,4 @@
-import x from "../../assets/images/x.png";
+import x from "#/assets/images/x.png";
 
 export default function ServiceModal({ service }: any) {
   return (

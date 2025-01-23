@@ -1,12 +1,18 @@
 ---
+import x from "#/assets/images/x.png";
 import { Image } from "astro:assets";
-import x from "../assets/images/x.png";
+import AdaptiveImage from "./adaptive-image.astro";
 
 interface Props {
   campaign: {
     image: ImageMetadata;
     title: string;
     description: string;
+    media: {
+      mobile: ImageMetadata[];
+      desktop: ImageMetadata[];
+    };
+    mediaDesc: string[];
   };
   index: number;
 }
@@ -47,9 +53,34 @@ const { campaign, index } = Astro.props;
       <div class="p-4 overflow-y-auto bg-[#020d18] lg:px-28">
         <div class="space-y-4">
           <div class="flex flex-col gap-6 relative overflow-hidden">
+            <AdaptiveImage
+              mobileImgUrl={campaign.media.mobile[0]}
+              desktopImgUrl={campaign.media.desktop[0]}
+              alt={campaign.title}
+              class="w-full h-auto aspect-square md:aspect-video object-cover border border-white rounded-3xl"
+            />
+            <p class="text-white leading-7">
+              {campaign.mediaDesc[0]}
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-6 relative overflow-hidden">
+            <AdaptiveImage
+              mobileImgUrl={campaign.media.mobile[1]}
+              desktopImgUrl={campaign.media.desktop[1]}
+              alt={campaign.title}
+              class="w-full h-auto aspect-square md:aspect-video object-cover border border-white rounded-3xl"
+            />
+            <p class="text-white leading-7">
+              {campaign.mediaDesc[1]}
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-6 relative overflow-hidden">
             <div class="relative">
-              <Image
-                src={campaign.image}
+              <AdaptiveImage
+                mobileImgUrl={campaign.media.mobile[0]}
+                desktopImgUrl={campaign.media.desktop[0]}
                 alt={campaign.title}
                 class="w-full h-auto aspect-square md:aspect-video object-cover border border-white rounded-3xl"
               />
@@ -73,35 +104,7 @@ const { campaign, index } = Astro.props;
               </button>
             </div>
             <p class="text-white leading-7">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              nesciunt labore dignissimos iste. Ducimus reprehenderit
-              perspiciatis assumenda repellendus voluptatibus quis.
-            </p>
-          </div>
-
-          <div class="flex flex-col gap-6 relative overflow-hidden">
-            <Image
-              src={campaign.image}
-              alt={campaign.title}
-              class="w-full h-auto aspect-square md:aspect-video object-cover border border-white rounded-3xl"
-            />
-            <p class="text-white leading-7">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              nesciunt labore dignissimos iste. Ducimus reprehenderit
-              perspiciatis assumenda repellendus voluptatibus quis.
-            </p>
-          </div>
-
-          <div class="flex flex-col gap-6 relative overflow-hidden">
-            <Image
-              src={campaign.image}
-              alt={campaign.title}
-              class="w-full h-auto aspect-square md:aspect-video object-cover border border-white rounded-3xl"
-            />
-            <p class="text-white leading-7">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-              nesciunt labore dignissimos iste. Ducimus reprehenderit
-              perspiciatis assumenda repellendus voluptatibus quis.
+              {campaign.mediaDesc[0]}
             </p>
           </div>
         </div>

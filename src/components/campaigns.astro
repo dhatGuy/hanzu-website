@@ -1,6 +1,10 @@
 ---
-import dota2 from "../assets/images/dota-2.png";
-import wow from "../assets/images/wow-legends.jpg";
+import statsWowDesktop1 from "#/assets/images/stats-wow-1-desktop.png";
+import statsWowMobile1 from "#/assets/images/stats-wow-1-mobile.png";
+import statsWowDesktop2 from "#/assets/images/stats-wow-2-desktop.png";
+import statsWowMobile2 from "#/assets/images/stats-wow-2-mobile.png";
+import athens from "../assets/images/athens.png";
+import wow from "../assets/images/wow-legends.png";
 import CampaignItem from "./campaign-item.astro";
 
 const items = [
@@ -8,13 +12,29 @@ const items = [
     image: wow,
     title: "World of Warships",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+      "We specialize in creating impactful gaming campaigns with measurable success.",
+    media: {
+      mobile: [statsWowMobile1, statsWowMobile2],
+      desktop: [statsWowDesktop1, statsWowDesktop2],
+    },
+    mediaDesc: [
+      "We partnered with 560 influencers to promote the game, resulting in 13,975 new players.",
+      "World of Warships had 39,435 website visits, and over 348 million minutes of watch time.",
+    ],
   },
   {
-    image: dota2,
-    title: "Dota 2",
+    image: athens,
+    title: "Athens's League",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+      "We organized an exciting Dota 2 tournament featuring 8 teams, streamed on Trovo.",
+    media: {
+      mobile: [statsWowMobile1, statsWowMobile2],
+      desktop: [statsWowDesktop1, statsWowDesktop2],
+    },
+    mediaDesc: [
+      "We partnered with 560 influencers to promote the game, resulting in 13,975 new players.",
+      "World of Warships had 39,435 website visits, and over 348 million minutes of watch time.",
+    ],
   },
   // {
   //   image: leagueoflegends,
