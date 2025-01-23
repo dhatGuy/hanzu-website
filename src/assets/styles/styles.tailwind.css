@@ -11,9 +11,9 @@
 }
 
 @font-face {
-  font-family: 'EurostileExt-Normal';
-  src: url('/fonts/EurostileExt-Normal-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'Eurostile Extended';
+  src: url('/fonts/EurostileExtended.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }

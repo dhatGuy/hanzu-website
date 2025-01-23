@@ -13,9 +13,9 @@ import x from "../assets/images/x.png";
   <div
     class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto"
   >
-    <div class="rounded-[2.5rem] shadow-sm overflow-hidden">
+    <div class="rounded-[2.5rem] shadow-sm relative">
       <div
-        class="flex flex-col items-center justify-center py-2 px-4 relative bg-white"
+        class="flex flex-col items-center justify-center overflow-hidden py-2 px-4 bg-white rounded-t-[40px]"
       >
         <h3
           id="contact-modal-label"
@@ -25,7 +25,7 @@ import x from "../assets/images/x.png";
         </h3>
         <button
           type="button"
-          class="absolute -right-2 md:right-3 -top-2 md:top-2 size-6 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-[#e71d36] text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none"
+          class="absolute right-2 top-0 md:right-3 md:top-2 z-[90] size-6 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-[#e71d36] text-white hover:bg-[#ff4d4d] focus:outline-none focus:ring-2 focus:ring-[#e71d36] disabled:opacity-50 disabled:pointer-events-none shadow-sm"
           aria-label="Close"
           data-hs-overlay="#contact-modal"
         >
@@ -34,7 +34,7 @@ import x from "../assets/images/x.png";
         </button>
       </div>
 
-      <form action="#" class="grid gap-y-4 bg-[#020d18] p-4">
+      <form action="#" class="grid gap-y-4 bg-[#020d18] p-4 rounded-b-[40px]">
         <p class="text-white text-center">
           Contact us at <a
             class="text-[#e71d36] underline"
@@ -110,9 +110,10 @@ import x from "../assets/images/x.png";
 
   window.addEventListener("load", () => {
     setTimeout(() => {
-      document
-        .querySelectorAll("#contact-modal")
-        .forEach((el) => HSOverlay.open(el));
+      const el = document.querySelector("#contact-modal");
+      if (el) {
+        HSOverlay.open(el);
+      }
     });
   });
 </script> -->
