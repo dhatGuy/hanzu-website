@@ -1,12 +1,12 @@
 ---
-import "../assets/styles/styles.tailwind.css";
+import "#/assets/styles/styles.tailwind.css";
 import "@fontsource/lato";
-import Header from "../components/header.astro";
+import Header from "#/components/header.astro";
 import { SEO, type Props } from "astro-seo";
 import "aos/dist/aos.css";
 import { getImage } from "astro:assets";
-import originalBgImg from "../assets/images/BG.png";
-import ContactUs from "../components/contact-us.astro";
+import originalBgImg from "#/assets/images/BG.png";
+import ContactUs from "#/components/contact-us.astro";
 
 const bgImg = await getImage({ src: originalBgImg, format: "webp" });
 const seoProps: Props = {
