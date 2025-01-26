@@ -35,7 +35,7 @@ const ServicesSection = ({ items }) => {
                       "flex md:flex-col items-center md:items-start gap-4 md:gap-0 mx-auto md:mx-0 hover:scale-105 transition-all duration-300"
                     )}
                   >
-                    <span className="text-[#FF3131] text-4xl font-bold font-euro">
+                    <span className="text-[#FF3131] text-4xl font-bold font-euro flex-1 text-right">
                       {service.number}
                     </span>
 
@@ -47,7 +47,7 @@ const ServicesSection = ({ items }) => {
 
                     <h3
                       className={cn(
-                        "text-white text-lg md:text-xl font-bold max-w-32 sm:max-w-full font-euro",
+                        "text-white text-lg md:text-xl font-bold max-w-32 sm:max-w-full font-euro flex-1",
                         ""
                       )}
                     >
