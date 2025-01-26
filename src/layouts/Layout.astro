@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import { getImage } from "astro:assets";
 import originalBgImg from "#/assets/images/BG.png";
 import ContactUs from "#/components/contact-us.astro";
+import Analytics from "@vercel/analytics/astro";
 
 const bgImg = await getImage({ src: originalBgImg, format: "webp" });
 const seoProps: Props = {
@@ -49,6 +50,7 @@ const seoProps: Props = {
     <meta name="generator" content={Astro.generator} />
     <SEO {...seoProps} />
     <title>Hanzu</title>
+    <Analytics />
   </head>
   <body
     class={`bg-[rgb(2,35,62)] bg-cover bg-no-repeat`}
